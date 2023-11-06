@@ -1,0 +1,38 @@
+{
+  "name": "react-native-patterns",
+  "version": "1.0.0",
+  "description": "A component library to create patterns in React Native",
+  "main": "src/index",
+  "repository": "https://github.com/lewiscasewell/react-native-patterns",
+  "author": "Lewis Casewell",
+  "license": "MIT",
+  "source": "src/index",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "react",
+    "svg",
+    "art",
+    "pattern",
+    "pattern-library",
+    "library",
+    "performance",
+    "animation",
+    "stock",
+    "icons",
+    "beautiful",
+    "animated",
+    "skia",
+    "drawing",
+    "graphics",
+    "ui",
+    "canvas"
+  ],
+  "peerDependencies": {
+    "@shopify/react-native-skia": ">=0.1.185",
+    "react-native-reanimated": ">=3.1.0",
+    "react": ">=18",
+    "react-native": ">=0.69"
+  }
+}
