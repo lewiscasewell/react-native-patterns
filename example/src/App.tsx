@@ -8,12 +8,15 @@ import List from './components/List';
 const { width } = Dimensions.get('window');
 const HEADER_HEIGHT = 200;
 
+const uniqueKey = 'react-native-patterns';
+
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={defaultColors[0]} />
+
       <MeshGradient
-        uniqueKey="react-native-patterns"
+        uniqueKey={uniqueKey}
         width={width}
         height={HEADER_HEIGHT}
         blurRadius={0.4}
