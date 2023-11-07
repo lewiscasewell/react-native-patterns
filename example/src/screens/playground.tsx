@@ -1,7 +1,8 @@
-import { get } from 'http';
 import React, { useState } from 'react';
 import {
   Dimensions,
+  KeyboardAvoidingView,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -20,93 +21,182 @@ const PlaygroundScreen = () => {
   const [colors, setColors] = useState<string[]>(
     Array.from({ length: 6 }).map(() => getRandomColor())
   );
-  const [blurRadius, setBlurRadius] = useState('0.1');
+  const [blurRadius, setBlurRadius] = useState('0');
+  const [overlayOpacity, setOverlayOpacity] = useState('0');
+  const [text, setText] = useState('');
   return (
     <MeshGradient
       width={Dimensions.get('screen').width}
       height={Dimensions.get('screen').height}
       uniqueKey={uniqueKey}
-      style={styles.container}
+      style={{ flex: 1 }}
       overlayOpacity={0.5}
       overlayColor="white"
       blurRadius={0.3}
     >
-      <View style={styles.graphicContainer}>
-        <MeshGradient
-          style={styles.meshGradientContainer}
-          uniqueKey={uniqueKey}
-          width={200}
-          height={200}
-          colors={colors}
-          blurRadius={Number(blurRadius)}
-        />
-      </View>
-      <ScrollView
-        style={{ flex: 1, width: Dimensions.get('window').width, padding: 20 }}
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
-        <View>
-          <Text
-            style={{ fontSize: 18, fontWeight: 'bold', paddingHorizontal: 10 }}
-          >
-            Unique key
-          </Text>
-          <TextInput
-            value={uniqueKey}
-            placeholder="Each key generates a unique pattern"
-            onChangeText={setUniqueKey}
+        <View style={styles.container}>
+          <View
             style={{
-              paddingHorizontal: 10,
-              paddingVertical: 6,
-              fontSize: 18,
-              width: 200,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
             }}
-            autoCapitalize="none"
-            autoComplete="off"
-            autoCorrect={false}
-          />
-        </View>
-        <View>
-          <Text
-            style={{ fontSize: 18, fontWeight: 'bold', paddingHorizontal: 10 }}
           >
-            Blur radius (between 0 - 1)
-          </Text>
-          <TextInput
-            value={blurRadius}
-            placeholder="Set the blur radius"
-            onChangeText={setBlurRadius}
+            <View style={styles.graphicContainer}>
+              <MeshGradient
+                style={styles.meshGradientContainer}
+                uniqueKey={uniqueKey}
+                width={200}
+                height={200}
+                colors={colors}
+                blurRadius={Number(blurRadius)}
+                overlayOpacity={Number(overlayOpacity)}
+              >
+                <Text
+                  style={{ fontWeight: 'bold', fontSize: 20, color: 'white' }}
+                >
+                  {text}
+                </Text>
+              </MeshGradient>
+            </View>
+          </View>
+          <ScrollView
             style={{
-              paddingHorizontal: 10,
-              paddingVertical: 6,
-              fontSize: 18,
-              width: 200,
+              flex: 1,
+              width: Dimensions.get('window').width,
+              padding: 20,
             }}
-            autoCapitalize="none"
-            autoComplete="off"
-            autoCorrect={false}
-          />
+          >
+            <View>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  paddingHorizontal: 10,
+                }}
+              >
+                Unique key
+              </Text>
+              <TextInput
+                value={uniqueKey}
+                placeholder="Each key generates a unique pattern"
+                onChangeText={setUniqueKey}
+                style={{
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  fontSize: 18,
+                  width: 200,
+                }}
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect={false}
+              />
+            </View>
+            <View>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  paddingHorizontal: 10,
+                }}
+              >
+                Blur radius (between 0 - 1)
+              </Text>
+              <TextInput
+                value={blurRadius}
+                placeholder="Set the blur radius"
+                onChangeText={setBlurRadius}
+                style={{
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  fontSize: 18,
+                  width: 200,
+                }}
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect={false}
+                keyboardType="numeric"
+              />
+            </View>
+            <View>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  paddingHorizontal: 10,
+                }}
+              >
+                Overlay opacity (color can also be changed)
+              </Text>
+              <TextInput
+                value={overlayOpacity}
+                placeholder="Set the overlay opacity"
+                onChangeText={setOverlayOpacity}
+                style={{
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  fontSize: 18,
+                  width: 200,
+                }}
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect={false}
+                keyboardType="numeric"
+              />
+            </View>
+            <View>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  paddingHorizontal: 10,
+                }}
+              >
+                Text inside of the MeshGradient
+              </Text>
+              <TextInput
+                value={text}
+                placeholder="Set the text for the meshgradient"
+                onChangeText={setText}
+                style={{
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  fontSize: 18,
+                  width: 200,
+                }}
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect={false}
+              />
+            </View>
+          </ScrollView>
+          <TouchableOpacity
+            style={{
+              padding: 10,
+              backgroundColor: 'white',
+              borderRadius: 10,
+              position: 'absolute',
+              bottom: 20,
+              right: 20,
+              elevation: 10,
+              shadowColor: 'black',
+              shadowOpacity: 0.5,
+              shadowRadius: 10,
+              shadowOffset: { width: 0, height: 10 },
+            }}
+            onPress={() => {
+              setColors(Array.from({ length: 6 }).map(() => getRandomColor()));
+            }}
+          >
+            <Text>Refresh colors</Text>
+          </TouchableOpacity>
         </View>
-      </ScrollView>
-      <TouchableOpacity
-        style={{
-          padding: 10,
-          backgroundColor: 'white',
-          borderRadius: 10,
-          position: 'absolute',
-          bottom: 20,
-          right: 20,
-          elevation: 10,
-          shadowColor: 'black',
-          shadowOpacity: 0.5,
-          shadowRadius: 10,
-          shadowOffset: { width: 0, height: 10 },
-        }}
-        onPress={() => {
-          setColors(Array.from({ length: 6 }).map(() => getRandomColor()));
-        }}
-      >
-        <Text>Refresh colors</Text>
-      </TouchableOpacity>
+      </KeyboardAvoidingView>
     </MeshGradient>
   );
 };
