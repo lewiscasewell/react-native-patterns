@@ -9,7 +9,7 @@ import ListSpacer from './ListSpacer';
 
 const List = () => {
   const [randomIds, setRandomIds] = useState<string[]>(
-    new Array(10).fill(null).map(() => uuid())
+    new Array(5).fill(null).map(() => uuid())
   );
   const [countdown, setCountdown] = useState<number>(COUNTDOWN_SECONDS);
 
