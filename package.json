@@ -2,11 +2,24 @@
   "name": "react-native-patterns",
   "version": "1.0.0",
   "description": "A component library to create patterns in React Native",
-  "main": "src/index",
   "repository": "https://github.com/lewiscasewell/react-native-patterns",
   "author": "Lewis Casewell",
   "license": "MIT",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "react-native": "src/index.ts",
+  "types": "lib/typescript/index.d.ts",
   "source": "src/index",
+  "scripts": {
+    "prepare": "bob build",
+    "example": "yarn --cwd example",
+    "pods": "cd example && pod-install --quiet",
+    "bootstrap": "yarn example && yarn && yarn pods"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
   "keywords": [
     "react-native",
     "ios",
@@ -31,8 +44,70 @@
   ],
   "peerDependencies": {
     "@shopify/react-native-skia": ">=0.1.185",
-    "react-native-reanimated": ">=3.1.0",
     "react": ">=18",
-    "react-native": ">=0.69"
+    "react-native": ">=0.69",
+    "react-native-reanimated": ">=3.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.36",
+    "@types/react-native": "^0.72.5",
+    "pod-install": "^0.1.39",
+    "react-native-builder-bob": "^0.23.1",
+    "react-native-reanimated": "3.1.0",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native-community",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "semi": true,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "semi": true
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "commonjs",
+        {
+          "copyFlow": true
+        }
+      ],
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.json"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "@shopify/react-native-skia": "^0.1.216"
   }
 }
