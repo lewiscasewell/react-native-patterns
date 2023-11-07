@@ -14,13 +14,11 @@ function getRandomColor() {
   return color;
 }
 
-const DEFAULT_WIDTH = 200;
-const DEFAULT_HEIGHT = 200;
 const defaultColors = Array.from({ length: 4 }, () => getRandomColor());
 
 function MeshGradientImpl({
-  width = DEFAULT_WIDTH,
-  height = DEFAULT_HEIGHT,
+  width,
+  height,
   uniqueKey,
   blurRadius = 0,
   colors = defaultColors,
