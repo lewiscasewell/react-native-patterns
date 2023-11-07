@@ -20,7 +20,6 @@ function MeshGradientImpl({
   style,
 }: MeshGradientProps): React.ReactElement {
   const hash = numericHash(uniqueKey, 32);
-  console.log('hash', hash);
   const blur = Math.min(height, width) * blurRadius;
 
   const paths = useMemo(() => {

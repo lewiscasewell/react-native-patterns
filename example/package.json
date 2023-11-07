@@ -10,11 +10,17 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
     "@shopify/react-native-skia": "^0.1.216",
     "react": "18.2.0",
     "react-native": "0.72.6",
     "react-native-get-random-values": "^1.9.0",
     "react-native-reanimated": "^3.5.4",
+    "react-native-safe-area-context": "^4.7.4",
+    "react-native-screens": "^3.27.0",
+    "react-native-static-safe-area-insets": "^2.2.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
