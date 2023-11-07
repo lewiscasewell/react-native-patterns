@@ -4,23 +4,13 @@ import { BlurMask, Canvas, Group, Rect } from '@shopify/react-native-skia';
 import { View } from 'react-native';
 import numericHash from '../util/numericHash';
 import Shape from './Shape';
+import getRandomColor from '../util/getRandomColor';
 
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-const DEFAULT_WIDTH = 200;
-const DEFAULT_HEIGHT = 200;
 const defaultColors = Array.from({ length: 4 }, () => getRandomColor());
 
 function MeshGradientImpl({
-  width = DEFAULT_WIDTH,
-  height = DEFAULT_HEIGHT,
+  width,
+  height,
   uniqueKey,
   blurRadius = 0,
   colors = defaultColors,
@@ -30,13 +20,14 @@ function MeshGradientImpl({
   style,
 }: MeshGradientProps): React.ReactElement {
   const hash = numericHash(uniqueKey, 32);
+  console.log('hash', hash);
   const blur = Math.min(height, width) * blurRadius;
 
   const paths = useMemo(() => {
     return colors.map((color, index) => {
       return (
         <Shape
-          key={`shape_${index}`}
+          key={`${uniqueKey}-${color}-${index}`}
           hash={hash}
           color={color}
           index={index}
@@ -45,7 +36,7 @@ function MeshGradientImpl({
         />
       );
     });
-  }, [colors, hash, height, width]);
+  }, [colors, hash, height, width, uniqueKey]);
 
   return (
     <View
