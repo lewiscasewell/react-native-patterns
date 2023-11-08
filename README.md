@@ -25,7 +25,7 @@ yarn add react-native-patterns
 ```tsx
 import { MeshGradient } from 'react-native-patterns';
 
-const uniqueKey = 'some-unique-key';
+const uniqueKey = 'some-unique-key'; // such as an id
 const someNiceColors = ['#51C4D3', '#FF2BF1', '#32FF2B', '#311263'];
 
 function App() {
