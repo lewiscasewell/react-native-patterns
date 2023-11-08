@@ -14,13 +14,14 @@ const CarouselScreen = () => {
   return (
     <FlatList
       data={data}
-      renderItem={({ item }) => {
+      renderItem={({ item, index }) => {
         return (
           <MeshGradient
             uniqueKey={item.id}
             colors={item.colors}
             width={Dimensions.get('window').width}
             height={Dimensions.get('window').height}
+            blurRadius={Number(`0.${index}`)}
           />
         );
       }}
