@@ -67,3 +67,5 @@ Or you can also choose to wrap around other components…
   <Text>Hello, world!</Text>
 </MeshGradient>
 ```
+
+If using in list, would recommend using with `@shopify/flash-list` for better performance.
