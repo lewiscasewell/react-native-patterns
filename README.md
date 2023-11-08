@@ -1,4 +1,5 @@
 # react-native-patterns
+<img width="1222" alt="Screenshot 2023-11-08 at 14 16 49" src="https://github.com/lewiscasewell/react-native-patterns/assets/64678409/b69c0243-5833-45cc-ac42-a1738f23d287">
 
 ### A react native component library that allows you to build reproducible abstract patterns for your application.
 
