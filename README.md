@@ -7,7 +7,7 @@ This library was built using `@shopfiy/react-native-skia`
 
 ## Features
 
-- uniqueKey prop allows you to assign a pattern to an id
+- uniqueKey prop allows you to assign a pattern to an id, so that it will be the same every time
 - Can blur, or add an overlay, or custom styles
 - Works just like a View component
 - Written in typescript
