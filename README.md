@@ -12,9 +12,6 @@ This library was built using `@shopfiy/react-native-skia`
 - Written in typescript
 - Compatible with expo
 
-![A6A4DB62-28DE-4140-83AC-D470FAA4915E_1_106_c](https://github.com/lewiscasewell/react-native-patterns/assets/64678409/a87c925f-fd8b-4095-b2df-385f59d39729)
-
-
 ## Installation
 
 ```bash
