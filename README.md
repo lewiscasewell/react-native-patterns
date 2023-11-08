@@ -6,12 +6,14 @@ This library was built using `@shopfiy/react-native-skia`
 <img width="1222" alt="Screenshot 2023-11-08 at 14 16 49" src="https://github.com/lewiscasewell/react-native-patterns/assets/64678409/b69c0243-5833-45cc-ac42-a1738f23d287">
 
 ## Features
-
 - uniqueKey prop allows you to assign a pattern to an id, so that it will be the same every time
 - Can blur, or add an overlay, or custom styles
 - Works just like a View component
 - Written in typescript
 - Compatible with expo
+
+![A6A4DB62-28DE-4140-83AC-D470FAA4915E_1_106_c](https://github.com/lewiscasewell/react-native-patterns/assets/64678409/a87c925f-fd8b-4095-b2df-385f59d39729)
+
 
 ## Installation
 
