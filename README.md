@@ -1,9 +1,9 @@
-# react-native-patterns
+<img width="1226" alt="Screenshot 2023-11-08 at 14 27 58" src="https://github.com/lewiscasewell/react-native-patterns/assets/64678409/c294906d-dcf4-4a6d-baf8-fb145b1137f3"># react-native-patterns
 
 ### A react native component library that allows you to build reproducible abstract patterns for your application.
 This library was built using `@shopfiy/react-native-skia`
 
-<img width="1222" alt="Screenshot 2023-11-08 at 14 16 49" src="https://github.com/lewiscasewell/react-native-patterns/assets/64678409/b69c0243-5833-45cc-ac42-a1738f23d287">
+<img width="1226" alt="Screenshot 2023-11-08 at 14 27 58" src="https://github.com/lewiscasewell/react-native-patterns/assets/64678409/48ea08fb-83a4-4417-af55-dc88ab42b714">
 
 ## Features
 - uniqueKey prop allows you to assign a pattern to an id, so that it will be the same every time
