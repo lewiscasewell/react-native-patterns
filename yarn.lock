@@ -680,13 +680,6 @@
     "@babel/helper-plugin-utils" "^7.22.5"
     "@babel/plugin-syntax-numeric-separator" "^7.10.4"
 
-"@babel/plugin-transform-object-assign@^7.16.7":
-  version "7.22.5"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-object-assign/-/plugin-transform-object-assign-7.22.5.tgz#290c1b9555dcea48bb2c29ad94237777600d04f9"
-  integrity sha512-iDhx9ARkXq4vhZ2CYOSnQXkmxkDgosLi3J8Z17mKz7LyzthtkdVchLD7WZ3aXeCuvJDOW3+1I5TpJmwIbF9MKQ==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.22.5"
-
 "@babel/plugin-transform-object-rest-spread@^7.22.15":
   version "7.22.15"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-object-rest-spread/-/plugin-transform-object-rest-spread-7.22.15.tgz#21a95db166be59b91cde48775310c0df6e1da56f"
@@ -996,7 +989,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.22.5"
     "@babel/plugin-transform-react-pure-annotations" "^7.22.5"
 
-"@babel/preset-typescript@^7.16.7", "@babel/preset-typescript@^7.17.12":
+"@babel/preset-typescript@^7.17.12":
   version "7.23.2"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.23.2.tgz#c8de488130b7081f7e1482936ad3de5b018beef4"
   integrity sha512-u4UJc1XsS1GhIGteM8rnGiIvf9rJpiVgMEeCnwlLA7WJPC+jcXWJAGxYmeqs5hOZD8BbAfnV5ezBOxQbb4OUxA==
@@ -1948,16 +1941,6 @@ react-native-builder-bob@^0.23.1:
     prompts "^2.4.2"
     which "^2.0.2"
     yargs "^17.5.1"
-
-react-native-reanimated@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.1.0.tgz#6fe757dadf06a59b365c1c0339e992751ab03792"
-  integrity sha512-8YJR7yHnrqK6yKWzkGLVEawi1WZqJ9bGIehKEnE8zG58yLrSwUZe1T220XTbftpkA3r37Sy0kJJ/HOOiaIU+HQ==
-  dependencies:
-    "@babel/plugin-transform-object-assign" "^7.16.7"
-    "@babel/preset-typescript" "^7.16.7"
-    convert-source-map "^2.0.0"
-    invariant "^2.2.4"
 
 react-reconciler@^0.27.0:
   version "0.27.0"

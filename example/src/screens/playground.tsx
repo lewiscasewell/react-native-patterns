@@ -18,9 +18,9 @@ const GRAPHIC_CONTAINER_BORDER_WIDTH = 10;
 
 const PlaygroundScreen = () => {
   const [uniqueKey, setUniqueKey] = useState<string>('playground');
-  const [colors, setColors] = useState<string[]>(
-    Array.from({ length: 6 }).map(() => getRandomColor())
-  );
+  // const [colors, setColors] = useState<string[]>(
+  //   Array.from({ length: 6 }).map(() => getRandomColor())
+  // );
   const [blurRadius, setBlurRadius] = useState('0');
   const [overlayOpacity, setOverlayOpacity] = useState('0');
   const [text, setText] = useState('');
@@ -53,7 +53,7 @@ const PlaygroundScreen = () => {
                 uniqueKey={uniqueKey}
                 width={200}
                 height={200}
-                colors={colors}
+                // colors={colors}
                 blurRadius={Number(blurRadius)}
                 overlayOpacity={Number(overlayOpacity)}
               >

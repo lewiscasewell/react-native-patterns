@@ -5,6 +5,7 @@ import { View } from 'react-native';
 import numericHash from '../util/numericHash';
 import Shape from './Shape';
 import getRandomColor from '../util/getRandomColor';
+import generateHexColors from '../util/generateColorFromHash';
 
 const defaultColors = Array.from({ length: 4 }, () => getRandomColor());
 
@@ -13,7 +14,7 @@ function MeshGradientImpl({
   height,
   uniqueKey,
   blurRadius = 0,
-  colors = defaultColors,
+  colors,
   children,
   overlayColor = 'black',
   overlayOpacity = 0,
@@ -21,9 +22,16 @@ function MeshGradientImpl({
 }: MeshGradientProps): React.ReactElement {
   const hash = numericHash(uniqueKey, 32);
   const blur = Math.min(height, width) * blurRadius;
+  let finalColors = defaultColors;
+
+  if (!colors) {
+    finalColors = generateHexColors(hash, 4);
+  } else {
+    finalColors = colors;
+  }
 
   const paths = useMemo(() => {
-    return colors.map((color, index) => {
+    return finalColors.map((color, index) => {
       return (
         <Shape
           key={`${uniqueKey}-${color}-${index}`}
@@ -64,7 +72,7 @@ function MeshGradientImpl({
             y={0}
             width={width * 1.3}
             height={height * 1.3}
-            color={colors[0]}
+            color={finalColors[0]}
           />
           {paths}
         </Group>
