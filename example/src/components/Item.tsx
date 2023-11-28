@@ -19,7 +19,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
-import { MeshGradient } from '../../../lib/typescript';
+import { MeshGradient } from 'react-native-patterns';
 import Slider from './Slider';
 
 const { width, height } = Dimensions.get('screen');

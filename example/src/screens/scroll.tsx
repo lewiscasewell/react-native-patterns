@@ -16,7 +16,7 @@ const Scroll = () => {
     'react',
     'native',
     'patterns',
-    'v1.0.5 🎉',
+    'v1.0.4 🎉',
   ]);
   const scrollOffset = useSharedValue(0);
   const [isEditing, setIsEditing] = useState({ index: -1, isEditing: false });
