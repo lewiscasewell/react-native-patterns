@@ -3,9 +3,6 @@
 ### A react native component library that allows you to build reproducible abstract patterns for your application.
 This library was built using `@shopfiy/react-native-skia`
 
-![Screen Recording 2023-11-28 at 11 35 30](https://github.com/lewiscasewell/react-native-patterns/assets/64678409/864c8443-c321-44ab-9015-454a94b72524)
-
-
 <img width="1226" alt="Screenshot 2023-11-08 at 14 27 58" src="https://github.com/lewiscasewell/react-native-patterns/assets/64678409/00eb3935-61e9-4b7e-82b7-41cbae402bf1">
 
 ## Features
@@ -14,6 +11,8 @@ This library was built using `@shopfiy/react-native-skia`
 - Works just like a View component
 - Written in typescript
 - Compatible with expo
+
+![Screen Recording 2023-11-28 at 11 35 30](https://github.com/lewiscasewell/react-native-patterns/assets/64678409/864c8443-c321-44ab-9015-454a94b72524)
 
 ## Installation
 
