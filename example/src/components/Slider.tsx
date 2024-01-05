@@ -9,7 +9,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 
-const SliderWidth = 200; // Width of the slider
+// Width of the slider
 const KnobSize = 15; // Size of the knob
 
 const Slider: React.FC<{
@@ -17,7 +17,8 @@ const Slider: React.FC<{
   onValueChange?: (value: number) => void;
   range: [number, number];
   step: number;
-}> = ({ onValueChange, range, step, startValue }) => {
+  SliderWidth?: number;
+}> = ({ onValueChange, range, step, startValue, SliderWidth = 200 }) => {
   const translateX = useSharedValue(startValue);
   const maxValue = SliderWidth - KnobSize;
   const totalSteps = (range[1] - range[0]) / step;
@@ -67,9 +68,9 @@ const Slider: React.FC<{
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width: SliderWidth }]}>
       <TouchableOpacity
-        style={styles.touchableArea}
+        style={[styles.touchableArea, { width: SliderWidth }]}
         onPressIn={onTrackPress}
         activeOpacity={0.8}
       >
@@ -84,13 +85,11 @@ const Slider: React.FC<{
 
 const styles = StyleSheet.create({
   container: {
-    width: SliderWidth,
     height: KnobSize,
     justifyContent: 'center',
   },
   touchableArea: {
     position: 'absolute',
-    width: SliderWidth,
     height: KnobSize,
     justifyContent: 'center',
   },

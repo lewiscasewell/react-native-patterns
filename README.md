@@ -1,11 +1,13 @@
 # react-native-patterns
 
 ### A react native component library that allows you to build reproducible abstract patterns for your application.
+
 This library was built using `@shopfiy/react-native-skia`
 
 <img width="1226" alt="Screenshot 2023-11-08 at 14 27 58" src="https://github.com/lewiscasewell/react-native-patterns/assets/64678409/00eb3935-61e9-4b7e-82b7-41cbae402bf1">
 
 ## Features
+
 - uniqueKey prop allows you to assign a pattern to an id, so that it will be the same every time
 - Can blur, or add an overlay, or custom styles
 - Works just like a View component
@@ -23,6 +25,8 @@ yarn add react-native-patterns
 ```
 
 ## Usage
+
+### MeshGradient
 
 ```tsx
 import { MeshGradient } from 'react-native-patterns';
@@ -71,3 +75,31 @@ Or you can also choose to wrap around other components…
 ```
 
 If using in list, would recommend using with `@shopify/flash-list` for better performance.
+
+### Grid
+
+```tsx
+import { Grid } from 'react-native-patterns';
+
+const uniqueKey = 'some-unique-key'; // such as an id
+
+function App() {
+  return (
+    <Grid
+      // required
+      uniqueKey={uniqueKey}
+      width={200}
+      height={200}
+      // optional
+      frontColor="#51C4D3"
+      backColor="#FF2BF1"
+      borderSize={0.5}
+      zoomPercentage={40}
+      mask="none"
+      style={{
+        borderRadius: 20,
+      }}
+    />
+  );
+}
+```
