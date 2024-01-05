@@ -46,8 +46,6 @@ function SquareGrid({
     [height, width, squareSize]
   );
 
-  console.log(columnCount, rowCount);
-
   const radialColors = useMemo(() => {
     if (mask === 'radial-outer') {
       return [finalBackColor, finalBackColor, `${finalBackColor}BB`];

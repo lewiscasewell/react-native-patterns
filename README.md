@@ -19,7 +19,6 @@ This library was built using `@shopfiy/react-native-skia`
 ## Installation
 
 ```bash
-yarn add react-native-reanimated
 yarn add @shopify/react-native-skia
 yarn add react-native-patterns
 ```
