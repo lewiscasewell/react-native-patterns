@@ -5,13 +5,13 @@ import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from 'react-native-reanimated';
-import ScrollBar from '../components/ScrollBar';
-import Background from '../components/Background';
-import Item from '../components/Item';
+import ScrollBar from './components/ScrollBar';
+import Background from './components/Background';
+import Item from './components/Item';
 
 const { height } = Dimensions.get('screen');
 
-const Scroll = () => {
+const MeshGradientScreen = () => {
   const [data, setData] = useState([
     'react',
     'native',
@@ -79,4 +79,4 @@ const Scroll = () => {
   );
 };
 
-export default Scroll;
+export default MeshGradientScreen;

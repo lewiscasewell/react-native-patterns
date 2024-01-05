@@ -20,7 +20,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
 import { MeshGradient } from 'react-native-patterns';
-import Slider from './Slider';
+import Slider from '../../../components/Slider';
 
 const { width, height } = Dimensions.get('screen');
 
