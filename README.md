@@ -41,7 +41,7 @@ function App() {
       width={200}
       height={200}
       // optional
-      // default colors are randomly selected
+      // default colors are generated via uniqueKey
       colors={someNiceColors}
       // default black
       overlayColor="white"
